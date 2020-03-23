@@ -57,10 +57,10 @@ SELECT SUBSTRING(payload,1,20), COUNT(*) FROM IOTA_JSON GROUP BY SUBSTRING(paylo
 EMIT CHANGES;
 ```
 Look at the output, today there are 4 types of JSON with following first JSON element:
- . id
- . v
- . device
- . type
+ - id
+ - v
+ - device
+ - type
  
 N.B. I known! I known! it is very simplistic method. Do you have another idea? :-)
 
