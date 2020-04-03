@@ -61,6 +61,8 @@ Look at the output, today there are 4 types of JSON with following first JSON el
  - v
  - device
  - type
+ - channel
+ - TanglePigeon
  
 N.B. I known! I known! it is very simplistic method. Do you have another idea? :-)
 
@@ -82,5 +84,13 @@ WHERE (EXTRACTJSONFIELD(payload, '$.device') IS NOT NULL);
 CREATE STREAM IOTA_JSON_TYPE
 AS SELECT * FROM IOTA_JSON
 WHERE (EXTRACTJSONFIELD(payload, '$.type') IS NOT NULL);
+
+CREATE STREAM IOTA_JSON_CHANNEL
+AS SELECT * FROM IOTA_JSON
+WHERE (EXTRACTJSONFIELD(payload, '$.channel') IS NOT NULL);
+
+CREATE STREAM IOTA_JSON_TANGLEPIGEON
+AS SELECT * FROM IOTA_JSON
+WHERE (EXTRACTJSONFIELD(payload, '$.TanglePigeon') IS NOT NULL);
 
 ```
